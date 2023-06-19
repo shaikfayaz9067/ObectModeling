@@ -32,6 +32,16 @@ public class Contest extends BaseEntity{
     //  2. You can use "./gradlew build" to check if your code builds successfully.
 
     private void validateQuestionList(List<Question> qList, Level contestLevel) throws InvalidContestException {
+     
+        // qList.stream().map(c->c.contestLevel==contestLevel).
+       for (Question question : qList) {
+        if(question.getLevel()!=contestLevel){
+            throw new InvalidContestException("All levels of difficulty are not the same!");
+        }
+        
+       }
+
+
     }
 
 
