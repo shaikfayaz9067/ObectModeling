@@ -2,9 +2,7 @@ package com.crio.codingame.entities;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import com.crio.codingame.exceptions.InvalidContestException;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,7 +11,7 @@ import org.junit.jupiter.api.Test;
 public class ContestTest {
 
 
-   // TODO: WARNING!!!
+//    TODO: WARNING!!!
    //  DO NOT MODIFY ANY FILES IN THE TESTS/ ASSESSMENTS UNLESS ASKED TO.
    //  Any modifications in this file may result in Assessment failure!
 
@@ -40,6 +38,30 @@ public class ContestTest {
    }
 
 
+    @Test
+    @DisplayName("endContest method Should End Contest")
+    public void endContest_ShouldEndContest(){
+        //Arrange
+        String id = "1";
+        String name = "Crio.Do PhonePe TechScholars Assessment #1";
+        List<Question> questions =  new ArrayList<Question>(){
+            {
+            add(new Question("1", "Question1",Level.LOW,10));
+            add(new Question("1", "Question2",Level.LOW,20));
+            add(new Question("1", "Question3",Level.LOW,30));
+            }
+        };
+        Level level = Level.LOW;
+        User creator = new User("1","Yakshit",0);
+        ContestStatus contestStatus = ContestStatus.IN_PROGRESS;
+        Contest contest = new Contest(id, name, questions, level, creator, contestStatus);
+
+        //Act
+        contest.endContest();
+
+        //Act and Assert
+        Assertions.assertEquals(contest.getContestStatus(),ContestStatus.ENDED);
+    }
 
 
 }
