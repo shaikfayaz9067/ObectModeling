@@ -2,7 +2,9 @@ package com.crio.codingame.entities;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.crio.codingame.exceptions.InvalidContestException;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -11,7 +13,7 @@ import org.junit.jupiter.api.Test;
 public class ContestTest {
 
 
-//    TODO: WARNING!!!
+   // TODO: WARNING!!!
    //  DO NOT MODIFY ANY FILES IN THE TESTS/ ASSESSMENTS UNLESS ASKED TO.
    //  Any modifications in this file may result in Assessment failure!
 

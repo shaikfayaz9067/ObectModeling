@@ -1,8 +1,10 @@
 
 package com.crio.codingame.entities;
 
+// import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
 import com.crio.codingame.exceptions.InvalidContestException;
 
 public class Contest extends BaseEntity{
@@ -25,12 +27,19 @@ public class Contest extends BaseEntity{
     public Contest(String name, List<Question> questions, Level level, User creator,
             ContestStatus contestStatus) {
         this.name = name;
-        this.questions = questions;
+         this.questions = questions;
+    //    this.questions = new ArrayList<>();
         validateQuestionList(questions, level);
         this.level = level;
         this.creator = creator;
         this.contestStatus = contestStatus;
     }
+
+    ////
+    
+
+
+    ///
     // TODO: CRIO_TASK_MODULE_ENTITIES
     // Complete the validateQuestionList method to verify if all the questions have the same level and are equal to contest level.
     // Throw InValidContestException if the above condition is not true. This will stop the Object Creation.

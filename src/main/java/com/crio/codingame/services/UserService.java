@@ -3,7 +3,6 @@ package com.crio.codingame.services;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
 import com.crio.codingame.dtos.UserRegistrationDto;
 import com.crio.codingame.entities.Contest;
 import com.crio.codingame.entities.ContestStatus;
@@ -31,7 +30,7 @@ public class UserService implements IUserService {
   
     @Override
     public User create(String name) {
-        Integer score=1500;
+        Integer score=0;
         String id="1";
         final User user=new User(id, name, score);
         this.userRepository.save(user);
@@ -70,8 +69,6 @@ public class UserService implements IUserService {
             Collections.sort(users, new SortByOrderDESC());
         }
         
-
-
      return users;
     }
 
